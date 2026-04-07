@@ -1,0 +1,26 @@
+module.exports = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  roots: ['<rootDir>/src'],
+  testMatch: ['**/*.test.ts'],
+  collectCoverageFrom: [
+    'src/**/*.ts',
+    '!src/**/*.d.ts',
+    '!src/index.ts',
+  ],
+  coverageDirectory: 'coverage',
+  coverageReporters: ['text', 'lcov', 'clover'],
+  moduleNameMapper: {
+    '^@core/(.*)$': '<rootDir>/src/core/$1',
+    '^@network/(.*)$': '<rootDir>/src/network/$1',
+    '^@cluster/(.*)$': '<rootDir>/src/cluster/$1',
+    '^@sync/(.*)$': '<rootDir>/src/sync/$1',
+    '^@persistence/(.*)$': '<rootDir>/src/persistence/$1',
+    '^@monitoring/(.*)$': '<rootDir>/src/monitoring/$1',
+    '^@security/(.*)$': '<rootDir>/src/security/$1',
+    '^@api/(.*)$': '<rootDir>/src/api/$1',
+    '^@orchestration/(.*)$': '<rootDir>/src/orchestration/$1',
+    '^@config/(.*)$': '<rootDir>/src/config/$1',
+    '^@utils/(.*)$': '<rootDir>/src/utils/$1',
+  },
+};
